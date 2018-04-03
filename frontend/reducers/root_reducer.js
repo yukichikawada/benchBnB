@@ -4,6 +4,6 @@ import errorsReducer from './errors_reducer';
 import sessionErrorsReducer from './session_errors_reducer';
 
 export default combineReducers({
-  session: sessionReducer,
-  errors: errorsReducer
+  sessionReducer,
+  errorsReducer
 });

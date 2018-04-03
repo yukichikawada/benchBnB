@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { signup, logout, login} from './util/session_api_util';
+
+import { login } from './actions/session_actions';
+
+import Root from './components/Root';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-
   const store = configureStore();
 
-  ReactDOM.render(<h1>Welcome to BenchBnB</h1>, root);
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.signup = signup;
-  window.logout = logout;
-  window.login = login;
+  window.login = login();
+
+  ReactDOM.render(<Root store={store}/>, root);
 });
